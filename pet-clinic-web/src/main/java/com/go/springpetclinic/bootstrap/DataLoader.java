@@ -20,7 +20,7 @@ public class DataLoader implements CommandLineRunner {
     private final PetService petService;
 
 
-    public DataLoader(@Qualifier("ownerServiceMap") OwnerService ownerService, @Qualifier("vetServiceMap") VetService vetService, @Qualifier("petServiceMap")PetService petService) {
+    public DataLoader( OwnerService ownerService, VetService vetService, PetService petService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petService = petService;
