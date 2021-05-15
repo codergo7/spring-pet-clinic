@@ -5,10 +5,6 @@ import com.go.springpetclinic.model.Vet;
 import com.go.springpetclinic.service.OwnerService;
 import com.go.springpetclinic.service.PetService;
 import com.go.springpetclinic.service.VetService;
-import com.go.springpetclinic.service.map.OwnerServiceMap;
-import com.go.springpetclinic.service.map.PetServiceMap;
-import com.go.springpetclinic.service.map.VetServiceMap;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
