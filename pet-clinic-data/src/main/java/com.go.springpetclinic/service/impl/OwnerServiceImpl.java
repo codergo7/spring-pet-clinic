@@ -1,13 +1,22 @@
 package com.go.springpetclinic.service.impl;
 
 import com.go.springpetclinic.model.Owner;
+import com.go.springpetclinic.model.Pet;
 import com.go.springpetclinic.service.OwnerService;
+import com.go.springpetclinic.service.PetService;
+import com.go.springpetclinic.service.PetTypeService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@RequiredArgsConstructor
 public class OwnerServiceImpl extends AbstractMapService<Owner,Long> implements OwnerService {
+
+    private final PetService petService;
+    private final PetTypeService petTypeService;
+
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -25,7 +34,29 @@ public class OwnerServiceImpl extends AbstractMapService<Owner,Long> implements 
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object);
+        if(object != null){
+            if (object.getPets() != null) {
+                object.getPets().forEach(pet -> {
+                    if (pet.getPetType() != null){
+                        if(pet.getPetType().getId() == null){
+                            pet.setPetType(petTypeService.save(pet.getPetType()));
+                        }
+                    } else {
+                        throw new RuntimeException("Pet Type is required");
+                    }
+
+                    if(pet.getId() == null){
+                        Pet savedPet = petService.save(pet);
+                        pet.setId(savedPet.getId());
+                    }
+                });
+            }
+
+            return super.save(object);
+
+        } else {
+            return null;
+        }
     }
 
     @Override
