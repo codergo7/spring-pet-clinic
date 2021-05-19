@@ -1,4 +1,4 @@
-package com.go.springpetclinic.service.map;
+package com.go.springpetclinic.service.impl;
 
 import com.go.springpetclinic.model.Pet;
 import com.go.springpetclinic.service.PetService;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
+public class PetServiceImpl extends AbstractMapService<Pet,Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();

@@ -1,7 +1,6 @@
-package com.go.springpetclinic.service.map;
+package com.go.springpetclinic.service.impl;
 
 import com.go.springpetclinic.model.BaseEntity;
-import com.go.springpetclinic.service.CrudService;
 
 import java.util.*;
 
