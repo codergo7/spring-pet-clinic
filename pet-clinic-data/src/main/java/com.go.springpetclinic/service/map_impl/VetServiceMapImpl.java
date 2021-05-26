@@ -1,17 +1,19 @@
-package com.go.springpetclinic.service.impl;
+package com.go.springpetclinic.service.map_impl;
 
 import com.go.springpetclinic.model.Specialty;
 import com.go.springpetclinic.model.Vet;
 import com.go.springpetclinic.service.SpecialtyService;
 import com.go.springpetclinic.service.VetService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile("servicemap")
 @RequiredArgsConstructor
-public class VetServiceImpl extends AbstractMapService<Vet,Long> implements VetService {
+public class VetServiceMapImpl extends AbstractMapService<Vet,Long> implements VetService {
 
     private final SpecialtyService specialtyService;
 
