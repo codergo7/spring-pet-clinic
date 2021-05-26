@@ -1,22 +1,22 @@
-package com.go.springpetclinic.service.impl;
+package com.go.springpetclinic.service.map_impl;
 
 import com.go.springpetclinic.model.BaseEntity;
 
 import java.util.*;
 
-public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> /*implements CrudService<T,ID>*/ {
+public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
 
     protected Map<Long,T> map = new HashMap<>();
 
-    Set<T> findAll(){
+    public Set<T> findAll(){
         return new HashSet<>(map.values());
     }
 
-    T findById(ID id){
+    public T findById(ID id){
         return map.get(id);
     }
 
-    T save(T object){
+   public T save(T object){
         if(object!= null){
             if(object.getId() == null){
                 object.setId(getNextId());
@@ -30,11 +30,11 @@ public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> /
         return object;
     }
 
-    void deleteById(ID id){
+    public void deleteById(ID id){
         map.remove(id);
     }
 
-    void delete(T object){
+    public void delete(T object){
         map.entrySet().removeIf(entry-> entry.getValue().equals(object));
     }
 

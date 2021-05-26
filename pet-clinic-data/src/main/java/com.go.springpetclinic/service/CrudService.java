@@ -1,10 +1,11 @@
 package com.go.springpetclinic.service;
 
-import java.util.Set;
+import java.util.Collection;
+
 
 public interface CrudService<T,ID> {
 
-    Set<T> findAll();
+    Collection<T> findAll();
     T findById(ID id);
     T save(T object);
     void delete(T object);
