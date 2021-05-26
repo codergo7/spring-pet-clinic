@@ -5,13 +5,13 @@ import com.go.springpetclinic.service.SpecialtyService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.Collection;
 
 @Service
 @Profile("servicemap")
 public class SpecialtyServiceMapImpl extends AbstractMapService<Specialty,Long> implements SpecialtyService {
     @Override
-    public Set<Specialty> findAll() {
+    public Collection<Specialty> findAll() {
         return super.findAll();
     }
 

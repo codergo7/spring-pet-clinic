@@ -8,7 +8,7 @@ public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
 
     protected Map<Long,T> map = new HashMap<>();
 
-    public Set<T> findAll(){
+    public Collection<T> findAll(){
         return new HashSet<>(map.values());
     }
 

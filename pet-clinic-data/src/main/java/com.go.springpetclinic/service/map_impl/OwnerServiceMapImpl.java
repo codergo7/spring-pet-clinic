@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.Collection;
 
 @Service
 @Profile("servicemap")
@@ -20,7 +20,7 @@ public class OwnerServiceMapImpl extends AbstractMapService<Owner,Long> implemen
     private final PetTypeService petTypeService;
 
     @Override
-    public Set<Owner> findAll() {
+    public Collection<Owner> findAll() {
         return super.findAll();
     }
 

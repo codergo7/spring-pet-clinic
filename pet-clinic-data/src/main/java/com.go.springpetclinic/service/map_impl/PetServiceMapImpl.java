@@ -5,13 +5,13 @@ import com.go.springpetclinic.service.PetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.Collection;
 
 @Service
 @Profile("servicemap")
 public class PetServiceMapImpl extends AbstractMapService<Pet,Long> implements PetService {
     @Override
-    public Set<Pet> findAll() {
+    public Collection<Pet> findAll() {
         return super.findAll();
     }
 

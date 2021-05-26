@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.Collection;
 
 @Service
 @Profile("servicemap")
@@ -18,7 +18,7 @@ public class VetServiceMapImpl extends AbstractMapService<Vet,Long> implements V
     private final SpecialtyService specialtyService;
 
     @Override
-    public Set<Vet> findAll() {
+    public Collection<Vet> findAll() {
         return super.findAll();
     }
 
