@@ -4,11 +4,13 @@ import com.go.springpetclinic.model.*;
 import com.go.springpetclinic.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 @Component
+@Profile("servicemap")
 @RequiredArgsConstructor
 public class DataLoader implements CommandLineRunner {
 

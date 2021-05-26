@@ -3,14 +3,12 @@ package com.go.springpetclinic.service.sd_impl;
 import com.go.springpetclinic.model.PetType;
 import com.go.springpetclinic.repository.PetTypeRepository;
 import com.go.springpetclinic.service.PetTypeService;
-import com.go.springpetclinic.service.map_impl.AbstractMapService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
-import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
