@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 
 @Service
-@Profile("servicemap")
+@Profile({"default","map"})
 @RequiredArgsConstructor
 public class VisitServiceMapImpl extends AbstractMapService<Visit,Long> implements VisitService {
 

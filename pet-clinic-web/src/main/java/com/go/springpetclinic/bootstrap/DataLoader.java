@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 
 @Component
-@Profile("servicemap")
+@Profile({"default","map"})
 @RequiredArgsConstructor
 public class DataLoader implements CommandLineRunner {
 

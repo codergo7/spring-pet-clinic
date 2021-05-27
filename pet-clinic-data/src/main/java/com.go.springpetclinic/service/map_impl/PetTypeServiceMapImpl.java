@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 
 @Service
-@Profile("servicemap")
+@Profile({"default","map"})
 public class PetTypeServiceMapImpl extends AbstractMapService<PetType,Long> implements PetTypeService {
     @Override
     public Collection<PetType> findAll() {
