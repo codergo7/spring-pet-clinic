@@ -1,7 +1,6 @@
 package com.go.springpetclinic.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -14,7 +13,17 @@ import java.util.Set;
 @Table(name = "owners")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Owner extends Person{
+
+    @Builder
+    public Owner(String firstName, String lastName, String address, String city, String telephone, Set<Pet> pets) {
+        super(firstName, lastName);
+        this.address = address;
+        this.city = city;
+        this.telephone = telephone;
+        this.pets = pets;
+    }
 
     private String address;
     private String city;

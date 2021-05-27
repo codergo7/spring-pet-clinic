@@ -1,7 +1,6 @@
 package com.go.springpetclinic.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -13,6 +12,9 @@ import java.time.LocalDate;
 @Table(name = "visits")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Visit extends BaseEntity{
 
     private LocalDate date;
