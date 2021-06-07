@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.Collection;
 
 @Service
@@ -68,6 +69,9 @@ public class OwnerServiceMapImpl extends AbstractMapService<Owner,Long> implemen
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        return findAll().stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
     }
 }
