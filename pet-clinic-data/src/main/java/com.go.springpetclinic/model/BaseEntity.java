@@ -1,7 +1,7 @@
 package com.go.springpetclinic.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +12,9 @@ import java.io.Serializable;
 @MappedSuperclass
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@SuperBuilder
 public class BaseEntity implements Serializable {
 
     @Id
