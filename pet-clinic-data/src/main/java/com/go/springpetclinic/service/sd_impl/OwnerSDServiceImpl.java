@@ -18,9 +18,6 @@ import java.util.List;
 public class OwnerSDServiceImpl implements OwnerService {
 
     private final OwnerRepository ownerRepository;
-    private final PetRepository petRepository;
-    private final PetTypeRepository petTypeRepository;
-
 
     @Override
     public List<Owner> findAll() {
@@ -29,7 +26,7 @@ public class OwnerSDServiceImpl implements OwnerService {
 
     @Override
     public Owner findById(Long id) {
-        return ownerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        return ownerRepository.findById(id).orElse(null);
     }
 
     @Override
